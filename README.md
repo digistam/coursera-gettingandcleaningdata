@@ -11,7 +11,7 @@ There is one script: __run_analysis.R__. Download the script from this repo and 
 ## Analysis
 __run_analysis.R__ and the "__dataset__" folder have to be stored in the same project directory. Set this project directory as "__working directory__" in R Gui / RStudio and __source run_analysis.R__. Execute _run_analysis_ in R Gui / RStudio.
 ## Result
-The result of the analysis is a space-separated data file named __result.txt__ in the project directory. Read it into R with:
-> read.table('result.txt', header = TRUE)
+The result of the analysis is a space-separated data file named __results.txt__ in the project directory. Read it into R with:
+> read.table('results.txt', header = TRUE)
 
 Fields are explained in __codeBook.md__.
