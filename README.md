@@ -9,4 +9,4 @@ There is one script: __run_analysis.R__. Download the script from this repo and 
 ## Dataset
 [Download the dataset (zip file)](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)  and extract it into a folder named "__dataset__". 
 ## Analysis
-The run_analysis.R script and "dataset" folder have to be in the same main directory. Set this main directory as "working directory" in R Gui / RStudio and execute run_analysis.
+__run_analysis.R__ and the "__dataset__" folder have to be stored in the same main directory. Set this main directory as "__working directory__" in R Gui / RStudio and source run_analysis.R.
