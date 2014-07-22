@@ -10,9 +10,9 @@ There is one script: __run_analysis.R__. Download the script from this repo.
 The functions within run_analysis.R download the 
 [dataset (zip file)](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and extract the files into a subfolder named "__dataset__". 
 ## Analysis
-__run_analysis.R__ and the "__dataset__" folder are stored in the project directory. Set this project directory as "__working directory__" in R Gui / RStudio and __source run_analysis.R__. After sourcing run_analysis.R the following functions are available:
-* getUCIData()
-* getUCIDataWin()
+__run_analysis.R__ and the "__dataset__" folder are stored in the project directory. Set this project directory as "__working directory__" in R Gui / RStudio and __source run_analysis.R__. After sourcing run_analysis.R the following __functions__ are available:
+* _getUCIData()_
+* _getUCIDataWin()_
 
 Run __getUCIData()__ to download the dataset and unzip the files in the dataset folder. In case of a *"nonzero exit status"* warning (for example on Windows machines), you can use the __getUCIDataWin()__ function in order to download and unzip the dataset.
 ## Result
