@@ -14,7 +14,7 @@ __run_analysis.R__ and the "__dataset__" folder are stored in the project direct
 * _getUCIData()_
 * _getUCIDataWin()_
 
-Run __getUCIData()__ to download the dataset and unzip the files in the dataset folder. In case of a *"nonzero exit status"* warning (for example on Windows machines), you can use the __getUCIDataWin()__ function in order to download and unzip the dataset.
+Run *__getUCIData()__* to download the dataset and unzip the files in the dataset folder. In case of a *"nonzero exit status"* warning (for example on Windows machines), you can use the *__getUCIDataWin()__* function in order to download and unzip the dataset.
 ## Result
 The result of the analysis is a space-separated data file named __results.txt__ in the project directory. Read it into R with:
 > read.table('results.txt', header = TRUE)
