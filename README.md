@@ -19,11 +19,11 @@ In case of a *"nonzero exit status"* warning (for example on Windows machines), 
 __run_analysis.R__ and the "__dataset__" folder have to be stored in the same directory. Set this directory as "__working directory__" in R Gui / RStudio. After the dataset is available, execute the run_analysis() function to do the actual analysis.
 
 ## Result
-The result of the analysis are two comma separated data files in the project folder:
+The analysis results in two comma separated files in the working directory:
 * __tidydata.txt__ (all values, 10MB)
 * __avgdata.txt__ (average values, 12kb)
 
-Read it into R with:
+Read 'm into R with:
 
 > dataset1 <- read.csv("./tidydata.txt"); dataset2 <- read.csv("./avgdata.txt")
 
