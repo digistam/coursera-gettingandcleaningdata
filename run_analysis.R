@@ -31,6 +31,7 @@ run_analysis <- function() {
   # 1) Merges the training and the test sets to create one data set
   dataDir <- file.path('./dataset/')
   message('reading files into tables ...')
+  # 3) Uses descriptive activity names to name the activities in the data set
   activity_labels <- read.table(paste0(dataDir,"activity_labels.txt"))
   features <- read.table(paste0(dataDir,"features.txt"))
   ## test folder
@@ -49,27 +50,31 @@ run_analysis <- function() {
   y_test <- factor(y_test$V1,levels = activity_labels$V1, labels = activity_labels$V2)
   ## create dataframe
   message('creating dataframe ...')
-  train <- cbind(X_train,activity = y_train,subject = subject_train)
-  test <- cbind(X_test, activity = y_test,subject = subject_test)
+  train <- cbind(X_train, activity = y_train, subject = subject_train)
+  test <- cbind(X_test, activity = y_test, subject = subject_test)
   DF <- rbind(train,test)
   # 2) Extracts only the measurements on the mean and the standard deviation for each measurement
-  message('calculating mean and standard deviation ...')
-  measurement_mean <- grep('[Mm]ean',names(DF))
-  standard_deviation <- grep('[Ss]td',names(DF))
-  names(DF[,c(measurement_mean,standard_deviation,562,563)])
+  message('Using mean and standard deviation ...')
+  measurement_mean <- grep('[Mm]ean',names(DF)) ## simple grep expression
+  standard_deviation <- grep('[Ss]td',names(DF)) ## simple grep expression
+  # 4) Appropriately labels the data set with descriptive variable names
+  DFnames <- names(DF)
+  DFnames <- gsub("tB","time_B",DFnames)
+  DFnames <- gsub("tG","time_G",DFnames)
+  DFnames <- gsub("fB","frequency_B",DFnames)
+  DFnames <- gsub("Acc","Acceleration",DFnames)
+  DFnames <- gsub("\\.+|-","_",DFnames)
+  names(DF) <- DFnames
   DF <- DF[,c(measurement_mean,standard_deviation,562,563)]
   DF <- transform(DF,V1 = factor(V1))
-  # 3) Uses descriptive activity names to name the activities in the data set
-  ## under construction
-  # 4) Appropriately labels the data set with descriptive variable names
-  ## under construction
   ### Generate a tidy data set
   message('generating tidy data set ...')
   write.csv(DF, file="./tidydata.txt",row.names=T)
   # 5) Creates a second, independent tidy data set with the average of each variable for each activity and each subject
   message('calculating averages ...')
   avgdata <- aggregate(.~activity,data=DF,FUN=mean)
-  message('generating tidy data set ...')
+  message('generating tidy data set with average values ...')
   write.csv(avgdata, file="./avgdata.txt",row.names=T)
+  # print average values to screen
   avgdata
 }
