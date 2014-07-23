@@ -17,8 +17,8 @@ __run_analysis.R__ and the "__dataset__" folder are stored in the project direct
 Run *__getUCIData()__* to download the dataset and unzip the files in the dataset folder. In case of a *"nonzero exit status"* warning (for example on Windows machines), you can use the *__getUCIDataWin()__* function in order to download and unzip the dataset.
 ## Result
 The result of the analysis are two comma separated data files in the project folder:
-* __tidydata.txt__ (all values)
-* __avgdata.txt__ (average values)
+* __tidydata.txt__ (all values, 10MB)
+* __avgdata.txt__ (average values, 12kb)
 
 Read it into R with:
 
