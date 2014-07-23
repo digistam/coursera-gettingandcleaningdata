@@ -22,7 +22,6 @@ The result of the analysis are two comma separated data files in the project fol
 
 Read it into R with:
 
-> read.csv("./tidydata.txt")
-> read.csv("./avgdata.txt")
+> read.csv("./tidydata.txt"); read.csv("./avgdata.txt")
 
 Labels are explained in __codeBook.md__.
