@@ -5,16 +5,19 @@ One of the most exciting areas in all of data science right now is wearable comp
 ## Requirements
 This project does not require any additional packages. It has been tested with R version 3.0.2 (2013-09-25), platform i386-w64-mingw32/i386 (32-bit).
 ## Scripts
-There is one script: __run_analysis.R__. Download the script from this repo.
-## Dataset
-The functions within run_analysis.R download the 
-[dataset (zip file)](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and extract the files into a subfolder named "__dataset__". 
-## Analysis
-__run_analysis.R__ and the "__dataset__" folder are stored in the project directory. Set this project directory as "__working directory__" in R Gui / RStudio and __source run_analysis.R__. After sourcing run_analysis.R the following __functions__ are available:
+There is one script: __run_analysis.R__. Download the script from this repo. You can [source the script](http://www.dummies.com/how-to/content/how-to-source-a-script-in-r.html), after which the following functions are available within your R environment.
 * _getUCIData()_
 * _getUCIDataWin()_
+* _run_analysis()_
 
-Run *__getUCIData()__* to download the dataset and unzip the files in the dataset folder. In case of a *"nonzero exit status"* warning (for example on Windows machines), you can use the *__getUCIDataWin()__* function in order to download and unzip the dataset.
+## Dataset
+Execute the function __getUCIData()__ in order to download the 
+[dataset (zip file)](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) and have the files extracted into a subfolder named "__dataset__". 
+In case of a *"nonzero exit status"* warning (for example on Windows machines), you can use the *__getUCIDataWin()__* function in order to download and unzip the dataset.
+
+## Analysis
+__run_analysis.R__ and the "__dataset__" folder have to be stored in the same directory. Set this directory as "__working directory__" in R Gui / RStudio. After the dataset is available, execute the run_analysis() function to do the actual analysis.
+
 ## Result
 The result of the analysis are two comma separated data files in the project folder:
 * __tidydata.txt__ (all values, 10MB)
@@ -22,6 +25,6 @@ The result of the analysis are two comma separated data files in the project fol
 
 Read it into R with:
 
-> read.csv("./tidydata.txt"); read.csv("./avgdata.txt")
+> dataset1 <- read.csv("./tidydata.txt"); dataset2 <- read.csv("./avgdata.txt")
 
-Labels are explained in __codeBook.md__.
+Dataset labels are explained in __codeBook.md__.
